@@ -6,23 +6,23 @@ import { cn } from "@/lib/utils";
 export function Input({
   className,
   onSend,
+  disabled = false,
 }: {
   className?: string;
-  onSend: (text: string, done: () => void) => void;
+  onSend: (text: string) => void;
+  disabled?: boolean;
 }) {
-  const [disabled, setDisabled] = useState(false);
   const [value, setValue] = useState("");
 
   const handleSend = () => {
     if (!value.trim() || disabled){
       return;
     } 
-    setDisabled(true);
-    onSend(value, () => setDisabled(false));
+    onSend(value.trim());
     setValue("");
   };
 
-  const textareaPlaceholder = "聊些什么呢？";
+  const textareaPlaceholder = "想聊些什么呢？";
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === "Enter" && !e.shiftKey) {
