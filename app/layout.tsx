@@ -3,8 +3,8 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata: Metadata = {
-  title: "AI Storming",
-  description: "A platform for brainstorming with AI assistance.",
+  title: "Luma",
+  description: "",
 };
 
 export default function RootLayout({
