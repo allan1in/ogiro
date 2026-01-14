@@ -17,7 +17,7 @@ export function ThemeToggle({ className }: { className?: string }) {
       <TooltipTrigger
         onClick={toggleTheme}
         className={cn(
-          "relative p-2 rounded-md transition-all duration-200",
+          "relative p-2 rounded-[var(--radius-md)] transition-all duration-200",
           "cursor-pointer hover:bg-accent text-muted-foreground hover:text-foreground",
           className
         )}

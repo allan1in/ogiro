@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { ArrowUpIcon } from "lucide-react";
 
 export function Input({
   className,
@@ -15,9 +17,9 @@ export function Input({
   const [value, setValue] = useState("");
 
   const handleSend = () => {
-    if (!value.trim() || disabled){
+    if (!value.trim() || disabled) {
       return;
-    } 
+    }
     onSend(value.trim());
     setValue("");
   };
@@ -33,7 +35,10 @@ export function Input({
 
   return (
     <div
-      className={cn("w-full border border-border focus-within:border-ring rounded-2xl p-4 flex flex-col justify-between gap-2 bg-background", className)}
+      className={cn(
+        "w-full border border-border focus-within:border-ring rounded-[var(--radius-2xl)] p-4 flex flex-col justify-between gap-2 bg-background",
+        className
+      )}
     >
       <textarea
         className="border-none focus:outline-none w-full resize-none h-30 scrollbar-thin bg-transparent text-foreground placeholder:text-muted-foreground"
@@ -43,15 +48,14 @@ export function Input({
         onKeyDown={handleKeyDown}
       />
       <div className="w-full flex flex-row-reverse">
-        <button
+        <Button
           onClick={handleSend}
-          className={`bg-primary text-primary-foreground px-4 py-2 rounded-full hover:bg-primary/90 transition-colors ${
-            disabled ? "cursor-default opacity-50" : "cursor-pointer"
-          }`}
+          size="icon-lg"
+          className="rounded-full"
           disabled={disabled}
         >
-          发送
-        </button>
+          <ArrowUpIcon />
+        </Button>
       </div>
     </div>
   );

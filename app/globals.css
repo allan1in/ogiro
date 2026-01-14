@@ -16,7 +16,7 @@
 
 /* 简约滚动条样式 */
 .scrollbar-thin::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 
 .scrollbar-thin::-webkit-scrollbar-track {
@@ -25,7 +25,7 @@
 
 .scrollbar-thin::-webkit-scrollbar-thumb {
   background: var(--color-muted);
-  border-radius: 3px;
+  border-radius: 4px;
 }
 
 .scrollbar-thin::-webkit-scrollbar-thumb:hover {

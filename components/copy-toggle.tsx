@@ -27,7 +27,7 @@ export function CopyToggle({ text, align = "left", className }: CopyToggleProps)
       <TooltipTrigger
         onClick={handleCopy}
         className={cn(
-          "relative cursor-pointer p-2 rounded-md transition-all duration-200",
+          "relative cursor-pointer p-2 rounded-[var(--radius-md)] transition-all duration-200",
           "hover:bg-accent text-muted-foreground hover:text-foreground",
           align === "left" ? "self-start" : "self-end",
           className
